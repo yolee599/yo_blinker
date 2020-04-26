@@ -6,7 +6,7 @@
  * Change Logs:
  * Date           Author       Notes
  * 2019-11-14     yolee599     first version
- * 2020-04-26     yolee599     refactor
+ * 2020-04-26     yolee599     refactor, fixed broken link
  */
 
 #include "yo_blinker.h"
@@ -154,7 +154,8 @@ __repeat:
                 }
                 else
                 {
-                    obj_p->out_tick = yo_blinker_if_get_tick() + obj_p->style_p[obj_p->current_idx];
+                    obj_p->out_tick = yo_blinker_if_get_tick() + \
+                        obj_p->style_p[obj_p->current_idx];
                     obj_p->write_fp(obj_p->current_idx % 2 ? 0 : 1);
                 }
             }
@@ -165,8 +166,9 @@ __repeat:
                 if (obj_p->total_cnt != YO_BLINKER_FOREVER && \
                     ++obj_p->current_cnt >= obj_p->total_cnt)
                 {
-                    yo_blinker_detach(obj_p);
+                    /* select prev object at first, to prevent broken link */
                     obj_p = obj_p->prev_p;
+                    yo_blinker_detach(obj_p->next_p);
                 }
                 else
                 {

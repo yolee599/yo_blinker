@@ -1,10 +1,10 @@
-# yoblink
-[中文页](README_zh.md)
+# yo_blinker
+[EngLish](README_en.md)
 
-A simple library for blink device.
+一个简单的嵌入式闪烁报警设备驱动。
 
-## Overview
-When we use buzzer, led and other devices, we often need to achieve various on-off effects to achieve the purpose of indication. Yoblink can make this operation easier, and the operation is not blocked.
+## 简介
+我们在使用蜂鸣器，LED等设备的时候，经常要实现各种通断效果以达到指示的目的。yo_blinker 可以让这种操作更简单，并且这个操作不是阻塞的。
 
-## License
-MIT license.
+## 许可证
+MIT 许可证。

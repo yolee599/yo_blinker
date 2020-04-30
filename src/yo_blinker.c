@@ -1,21 +1,26 @@
-/*
+/**
+ * \file  yo_blinker.c
+ * \brief source file for core
+ * <p>
  * Copyright (c) 2019, yolee599
- *
- * License: MIT
- *
- * Change Logs:
- * Date           Author       Notes
- * 2019-11-14     yolee599     first version
- * 2020-04-26     yolee599     refactor, fixed broken link
+ * <p>
+ * <b>License:</b><br>
+ * MIT
+ * <p>
+ * <b>Change Logs:</b><br>
+ * <table border="1">
+ *  <tr><th>Date<th>Author<th>Notes</tr>
+ *  <tr><th>2019-11-14<th>yolee599<th>first version</tr>
+ *  <tr><th>2020-04-26<th>yolee599<th>refactor</tr>
+ * </table>
  */
 
 #include "yo_blinker.h"
 #include "port/yo_blinker_if.h"
 #include <string.h>
 
-/* some status flags */
-#define YO_BLINKER_SF_STOP    (0x00) /**< stop */
-#define YO_BLINKER_SF_RUNNING (0x01) /**< running */
+#define YO_BLINKER_SF_STOP    (0x00) /**< stop status flag */
+#define YO_BLINKER_SF_RUNNING (0x01) /**< running status flag */
 
 #if (YO_USING_OS)
 #define yo_blinker_mutex_init(mutex_p)   yo_blinker_if_mutex_init(mutex_p)
@@ -30,7 +35,7 @@
 static yo_blinker_t *m_head_p = YO_NULL, m_first;
 
 /** \brief Detach
- * \param obj_p the object
+ * \param[in] obj_p the object
  */
 static void yo_blinker_detach(yo_blinker_t *obj_p)
 {

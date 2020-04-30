@@ -1,12 +1,18 @@
-/*
+/**
+ * \file  yo_blinker.h
+ * \brief header file for core
+ * <p>
  * Copyright (c) 2019, yolee599
- *
- * License: MIT
- *
- * Change Logs:
- * Date           Author       Notes
- * 2019-11-14     yolee599     first version
- * 2020-04-26     yolee599     refactor
+ * <p>
+ * <b>License:</b><br>
+ * MIT
+ * <p>
+ * <b>Change Logs:</b><br>
+ * <table border="1">
+ *  <tr><th>Date<th>Author<th>Notes</tr>
+ *  <tr><th>2019-11-14<th>yolee599<th>first version</tr>
+ *  <tr><th>2020-04-26<th>yolee599<th>refactor</tr>
+ * </table>
  */
 
 #ifndef __YO_BLINKER_H
@@ -15,8 +21,7 @@
 #include <stdint.h>
 #include "yo_blinker_conf.h"
 
-/* running for forever */
-#define YO_BLINKER_FOREVER UINT8_MAX
+#define YO_BLINKER_FOREVER UINT8_MAX /**< running for forever */
 
 typedef void yo_blinker_write_ft(uint16_t value);
 
@@ -40,23 +45,23 @@ typedef struct yo_blinker_s
 } yo_blinker_t;
 
 /** \brief Initialize
- * \param obj_p the object
- * \param write_fp the write io function
+ * \param[in] obj_p the object
+ * \param[in] write_fp the write io function
  */
 void yo_blinker_init(yo_blinker_t *obj_p, yo_blinker_write_ft *write_fp);
 
 /** \brief Write io
  * \note using at stop state only
- * \param obj_p the object
- * \param value the value
+ * \param[in] obj_p the object
+ * \param[in] value the value
  */
 void yo_blinker_write(yo_blinker_t *obj_p, uint16_t value);
 
 /** \brief Set style
- * \param obj_p the object
- * \param style_p the style
- * \param style_num the number of style
- * \param total_cnt the total count
+ * \param[in] obj_p the object
+ * \param[in] style_p the style
+ * \param[in] style_num the number of style
+ * \param[in] total_cnt the total count
  *  \arg 0xFF forever
  *  \arg other count
  */
@@ -64,12 +69,12 @@ void yo_blinker_set_style(yo_blinker_t *obj_p, const yo_blinker_style_t *style_p
     uint8_t style_num, uint8_t total_cnt);
 
 /** \brief Start
- * \param obj_p the object
+ * \param[in] obj_p the object
  */
 void yo_blinker_start(yo_blinker_t *obj_p);
 
 /** \brief Stop
- * \param obj_p the object
+ * \param[in] obj_p the object
  */
 void yo_blinker_stop(yo_blinker_t *obj_p);
 

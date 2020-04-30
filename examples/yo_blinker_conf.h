@@ -1,11 +1,17 @@
-/*
+/**
+ * \file  yo_blinker_conf.h
+ * \brief config header file for example
+ * <p>
  * Copyright (c) 2019, yolee599
- *
- * License: MIT
- *
- * Change Logs:
- * Date           Author       Notes
- * 2020-04-26     yolee599     first version
+ * <p>
+ * <b>License:</b><br>
+ * MIT
+ * <p>
+ * <b>Change Logs:</b><br>
+ * <table border="1">
+ *  <tr><th>Date<th>Author<th>Notes</tr>
+ *  <tr><th>2020-04-26<th>yolee599<th>first version</tr>
+ * </table>
  */
 
 #ifndef __YO_BLINKER_CONF_H
